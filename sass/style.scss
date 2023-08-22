@@ -1,0 +1,139 @@
+.calculator {
+  input[type="text"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .results {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      text-align: center;
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #0D6EFD;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      overflow: hidden;
+
+      p {
+        margin: 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.5s, transform 0.5s;
+      }
+    }
+
+    .div.animate {
+      p {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .slider-fill {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+    transition: width 0.3s;
+    max-height: 18px;
+  }
+
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  #superInput {
+    padding-left: 2rem !important;
+  }
+
+  .slider-label {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #6C6E70;
+  margin-right: 8px;
+  vertical-align: middle;
+
+  &:checked {
+    background-color: #0D6EFD;
+    border-color: #6C6E70;
+  }
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 20px;
+
+  input[type="radio"] {
+    margin-top: -2px;
+  }
+}
+
+.noUi-target {
+  background: #E1E5EE;
+  border-radius: 10px;
+  border: 1px solid #E1E5EE;
+  box-shadow: none;
+
+  &.noUi-horizontal {
+    height: 14px;
+
+    .noUi-handle {
+      width: 24px;
+      height: 24px;
+      top: -7px;
+      border: 1px solid #6C6E70;
+      border-radius: 50%;
+      background: #0D6EFD;
+      cursor: default;
+      box-shadow: none;
+
+      &:after,
+      &:before {
+        background: #0D6EFD;
+      }
+    }
+
+    .noUi-value {
+      color: #0d0e0e !important;
+    }
+
+    .noUi-marker.noUi-marker-horizontal.noUi-marker-normal,
+    .noUi-marker.noUi-marker-horizontal.noUi-marker-large {
+      display: none !important;
+    }
+  }
+}

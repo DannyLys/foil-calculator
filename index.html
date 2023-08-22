@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"
+    integrity="sha512-qveKnGrvOChbSzAdtSs8p69eoLegyh+1hwOMbmpCViIwj7rn4oJjdmMvWOuyQlTOZgTlZA0N2PXA7iA8/2TUYA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <section class="my-5 my-xl-5 pt-4 ms-lg-5 px-3 px-lg-0 ps-xxl-5 me-lg-5 me-xxl-5 pe-lg-5 overflow-hidden">
+    <div class="container-fluid ps-lg-5 ms-lg-5 pe-lg-4 me-lg-5">
+      <div class="row my-5 my-xl-5 text-dark">
+        <div class="col-12">
+          <div>
+            <div class="border-bottom border-5 border-primary rounded">
+              <h3 class="fw-bold text-center text-lg-start fs-2">Check how much you will save with us</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 p-0 m-0 mt-3 px-3 px-xl-0">
+          <div class="row calculator my-5 mx-4 d-flex justify-content-between text-center text-xl-start">
+            <div class="col-12 col-xl-4">
+              <label class="fs-4 fw-bold pb-4">Type of foil currently used:</label>
+              <div id="foilType">
+                <label class="pe-xl-4"><input type="radio" name="foil" value="17" checked=""> 17mm</label>
+                <label class="pe-xl-4"><input type="radio" name="foil" value="20"> 20mm</label>
+                <label class="pt-3 pt-sm-0"><input type="radio" name="foil" value="23"> 23mm</label>
+              </div>
+              <label class="fs-4 fw-bold py-5">Number of pallets wrapped per day:</label>
+              <div class="slider-container">
+                <div id="palletsNumberSlider"></div>
+                <div class="slider-fill"></div>
+              </div>
+            </div>
+            <div class="col-12 col-xl-5 pt-5 pt-xl-0">
+              <label class="fs-4 fw-bold py-5">Weight of currently used foil consumed per day:</label>
+              <input class="fs-3 fw-bold border-0 text-center text-xl-start" type="text" id="foilWeight" readonly="">
+              <label class="fs-4 fw-bold py-4">Weight of ULTRA-X foil used per day:</label>
+              <input class="fs-3 fw-bold border-0 text-primary text-center text-xl-start" type="text" id="foilWeightUltra"
+                readonly="">
+            </div>
+          </div>
+          <div class="text-center text-xl-start mx-4">
+            <label class="fs-4 fw-bold pb-4 pt-xl-4">Choose our solution and save:</label>
+          </div>
+          <div class="col-md-12 results d-none d-xl-flex flex-column flex-xl-row justify-content-center justify-content-xl-start align-items-center mx-4">
+            <div
+              class="border border-1 border-primary rounded-circle bg-primary text-white text-center me-xl-4 d-flex flex-column justify-content-center align-items-center"
+              style="width: 220px; height:220px;">
+              <div class="circle-result fw-bold fs-1 w-100 resultDay">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder w-100">on a day scale</p>
+            </div>
+            <div
+              class="border border-1 border-primary rounded-circle bg-primary text-white text-center me-xl-4 d-flex flex-column justify-content-center align-items-center"
+              style="width: 230px; height:230px;">
+              <div class="circle-result fw-bold fs-1 w-100 resultWeek">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder w-100">on a week scale</p>
+            </div>
+            <div
+              class="border border-1 border-primary rounded-circle bg-primary text-white text-center me-xl-4 d-flex flex-column justify-content-center align-items-center"
+              style="width: 240px; height:240px;">
+              <div class="circle-result fw-bold fs-1 w-100 resultMonth">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder w-100">on a month scale</p>
+            </div>
+            <div
+              class="border border-1 border-primary rounded-circle bg-primary text-white text-center me-xl-4 d-flex flex-column justify-content-center align-items-center"
+              style="width: 250px; height:250px;">
+              <div class="circle-result fw-bold fs-1 w-100 resultYear">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder w-100">on a year scale</p>
+            </div>
+          </div>
+          <div class="col-md-12 results d-xl-none">
+            <div class="text-center d-flex justify-content-center align-items-center">
+              <div class="circle-result fw-bold fs-1 pe-2 text-primary resultDay flex-shrink-0">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder align-self-end">on a day scale</p>
+            </div>
+            <div class="text-center d-flex justify-content-center align-items-center">
+              <div class="circle-result fw-bold fs-1 pe-2 text-primary resultWeek flex-shrink-0">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder align-self-end">on a week scale</p>
+            </div>
+            <div class="text-center d-flex justify-content-center align-items-center">
+              <div class="circle-result fw-bold fs-1 pe-2 text-primary resultMonth flex-shrink-0">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder align-self-end">on a month scale</p>
+            </div>
+            <div class="text-center d-flex justify-content-center align-items-center">
+              <div class="circle-result fw-bold fs-1 pe-2 text-primary resultYear flex-shrink-0">
+                <p>0</p>
+              </div>
+              <p class="fw-bolder align-self-end">on a year scale</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"
+    integrity="sha512-UOJe4paV6hYWBnS0c9GnIRH8PLm2nFK22uhfAvsTIqd3uwnWsVri1OPn5fJYdLtGY3wB11LGHJ4yPU1WFJeBYQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+  <script src="/js/calculator.js"></script>
+</body>
+</html>
